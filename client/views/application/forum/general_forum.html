@@ -1,0 +1,23 @@
+
+
+<template name="general_forum">
+	<a href="/index/{{parentForumSlug}}">Retour</a>
+
+
+	<h1>{{currentForum.forumName}}</h1>
+	
+	<h3>Sous-forums (catégories)</h3>
+	{{#each forum in forums}}
+		<a href="/index/{{forum.slug}}/">{{forum.forumName}}</a>
+	{{/each}}
+
+	<h3>Sujets:</h3>
+	<ul>
+	{{#each subject in subjects}}
+		<li>
+			<a href="/index/{{currentForum.slug}}/{{subject.slug}}/">{{subject.title}} ( {{subject.postCount}} message(s) )</a>
+		</li>
+	{{/each}}
+	</ul>
+
+</template>
