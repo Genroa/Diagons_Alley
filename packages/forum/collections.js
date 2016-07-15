@@ -14,6 +14,11 @@ ForumAccount = Class.create({
 			type: Number,
 			default: 0
 		},
+		
+		username:{
+			type: String
+		},
+
 		profile:{
 			type: Object,
 			default: function(){
@@ -26,7 +31,14 @@ ForumAccount = Class.create({
 
 
 ForumAccounts = {
-	
+	onForumAccountCreationHook: [],
+	onForumAccountCreation: function(func){
+		onForumAccountCreationHook.push(func);
+	},
+
+	createForumAccount: function(username){
+		
+	}
 }
 
 
@@ -153,6 +165,7 @@ Forum = Class.create({
 
 
 Forums = {
+
 	createForum: function(name, parentForum = null){
 		/*
 		DESCRIPTION

@@ -22,11 +22,15 @@ Package.onUse(function(api) {
 	api.use('jagi:astronomy-timestamp-behavior');
 	api.use('jagi:astronomy-slug-behavior');
 	api.use('accounts-base');
+	api.use('blaze-html-templates');
+	api.use('tracker');
 	api.mainModule('forum.js');
 
 	api.add_files("collections.js");
 	api.add_files("publications.js", 'server');
 	api.add_files("package_methods.js", 'server');
+	api.add_files("template_helpers.js", 'client');
+	api.add_files("forum_account_subscription.js", "client");
 
 	api.export('ForumAccounts', 'server');
 	api.export('ForumAccount');

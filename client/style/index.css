@@ -1,0 +1,104 @@
+ 
+    * {
+                margin:0;
+                padding:0;
+                }
+
+ body { 
+                background-image: url(background.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+                background-position: center bottom;
+                color: black; }
+
+header #menu {
+                background-color: rgba(17,15,15,0.97);
+                width: 100%;
+                line-height: 50px;
+                height: 50px;
+                margin-top: -10px;
+                padding: 10px;
+                z-index:2;
+                position: fixed;
+                box-shadow: -2px 5px 10px black;
+                margin-bottom: 120px;
+                    }
+
+header #menu #nom_site {
+                
+                color: white;
+                font-size: 65px;
+                margin-top: 35px;
+                font-family: 'Aguafina Script', cursive;
+                text-align:center;
+                text-shadow: -2px 5px 10px black; }
+
+h1 { 
+                font-family: 'Aguafina Script', cursive;
+                font-size: 45px; 
+                color: white;
+                font-weight: 100;
+                text-align: center; }
+                
+footer #footer {
+    
+                background-color: rgba(17,15,15,0.92);
+                line-height: 20px;
+                height: 20px;
+                padding: 10px;
+    margin-top: 20px;
+                z-index:54;
+                position: fixed;
+                bottom:0;
+                width: 100%;
+                box-shadow: -10px -3px 5px black;
+                text-align: center;
+                color: #F7F0DE;
+                font-family: 'Julius Sans One', sans-serif; }
+
+footer a {      
+                color: white;
+                text-decoration: none;
+                transition: 2s; }
+                
+footer a:hover {
+                letter-spacing: 0.3em; 
+                transition: 2s; }
+
+.cadre {
+    
+    background-color: rgba(17,15,15,0.92);
+    width: 600px;
+    height: auto;
+    padding: 25px; 
+    margin-left: 150px;
+    position: absolute;
+    z-index:50;
+    margin-top: 150px;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 40px;
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: justify;
+}
+
+.cadre2 {
+    
+    background-color: rgba(17,15,15,0.92);
+    width: 410px;
+    height: auto;
+    padding: 20px; 
+    margin-right: 100px;
+    position: absolute;
+    z-index:51;
+    margin-left:  820px;
+    margin-top: 150px;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 40px;
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: justify;
+}
+     
+        

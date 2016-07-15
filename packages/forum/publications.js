@@ -4,6 +4,16 @@
 /*
 Permissions must be done in theses functions
 */
+Meteor.publish(null, function(){
+	return Meteor.users.find({_id: this.userId}, {fields: {currentForumAccount: 1}});
+});
+
+Meteor.publish("forumAccount", function(){
+	var user = Meteor.users.findOne({_id: this.userId});
+	var accountId = user && user.currentForumAccount;
+	console.log("ACCOUNT: "+JSON.stringify(user)+" ACCOUNT ID: "+accountId+", "+ForumAccount.find({_id: accountId}).count());
+	return ForumAccount.find({_id: accountId});
+});
 
 Meteor.publish("forums", function(){
 	return Forum.find({}); 

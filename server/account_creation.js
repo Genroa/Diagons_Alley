@@ -4,7 +4,7 @@ import { Accounts } from 'meteor/accounts-base';
 
 Accounts.onCreateUser(function(options, user) {
 	
-	var forumAccount = new ForumAccount({});
+	var forumAccount = new ForumAccount({username: user.username});
 	forumAccount.profile.village = "Aucun village";
 	forumAccount.profile.health = 100;
 	forumAccount.profile.experience = 0;

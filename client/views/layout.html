@@ -1,3 +1,161 @@
 <template name="mainLayout">
-	{{> yield}}
+	<head>
+		<meta charset="UTF-8">
+		<title>Layout général</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="general.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Aguafina+Script' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script>
+			$(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<header>
+					<nav class="navbar navbar-inverse navbar-fixed-top" style="padding: none;" id="nav">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+									<span class="sr-only">Navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav">
+									<li>
+										<a href="#">
+											<div class="crown" id="nom_site">
+												Diagon's Alley
+											</div>
+										</a>
+									</li>
+								</ul>
+								<ul class="nav navbar-nav navbar-right">
+									<li><a href="#" style="color: #c10b0b;">Administration</a></li>
+									<li><a href="#">Forum</a></li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+											Hors Jeu <span class="caret"></span>
+										</a>
+										<ul class="dropdown-menu dropdown-noir" style="background-color: black; color: white;">
+											<li><a href="#" style="color: white;">Règlement</a></li>
+											<li><a href="#" style="color: white;">Contact</a></li>
+											<li><a href="#">Chaudron Baveur (Tchat)</a></li>
+											<li><a href="#">Partenaires</a></li>
+											<li><a href="#">Aide (F.A.Q)</a></li>
+											<li><a href="#">Page Facebook</a></li>
+										</ul>
+									</li>
+									<li style="width: 90px;">
+										{{#if currentUser}}
+											<a href="#" style="margin-top: -10px;">
+												<img src="hibou.png" style=" padding: none;" /><span class="badge" style="background-color: #7c0e75; margin-left: -15px; margin-bottom: -25px;">42</span>
+											</a>
+										{{/if}}
+									</li>
+								</ul>
+							</div><!-- /.navbar-collapse -->
+						</div><!-- /.container-fluid -->
+					</nav>
+				</header>
+
+
+
+				<!-- Menu à gauche -->
+				<div class="col xs-12 col-md-2" style=" margin-top: 90px;">
+					<div class="row">
+						<aside class="left-panel hidden-xs hidden-sm" style="outline: none;" tabindex="5000">
+							{{#if currentUser}}
+								<div id="info-user">	
+									<div><b class="pseudo">{{ getForumUsername }}</b></div>
+									<div><a href="#"><i style="color: #9b8a57; font-size: 12px; float: right; padding-bottom: 10px;">Nom du Village</i></a></div>
+								</div>
+								<br />
+								<center><img class="avatar-user" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97260+Avatar&w=150&h=260" /></center>
+
+								<div id="info-user" style="font-size: 12px; text-align: center;">
+									Grade 1 <br />
+									Grade 2 <br />
+									Grade 3 
+								</div>
+
+								<div id="info-user" style="font-size: 12px;">
+									<b style="color: #9b8a57;">Messages</b> : {{ getForumpostedMessagesNumber }} <br />
+									<b style="color: #9b8a57;">Pointeur personnel</b> : 250 <br />
+									<b style="color: #9b8a57;">Argent</b> : 10 Gallions <br />
+									<b style="color: #9b8a57;">Niveau 1 </b>: Nouvel Habitant <br />
+									<br />
+									<b style="color: #9b8a57;"><a href="#">Mon profil</a></b><br />
+									<b><a href="#">Paramètres du compte</a></b><br />
+								</div>
+
+								<div id="info-user" style="font-size: 12px;">
+									<b>Changer de personnage</b>
+								</div>
+								<div id="info-user" style="font-size: 12px; margin-bottom: 10px;">
+									<form>
+										<select name="choix_perso" id="choix_perso">
+											<option id="choix_perso" value="perso1">Personnage 1</option>
+										</select>
+									</form>
+								</div>
+							{{/if}}
+						</aside>
+					</div>
+				</div>
+
+				<!-- Icones à droite -->
+				<div class="col-xs-12 col-md-2 col-md-push-8" style="display: table-cell; vertical-align: bottom;">
+					
+
+					{{#if currentUser}}
+						<div id="titre-cadre" style="margin-left: -10px;"><center>Mon compte</center></div>
+						<div id="cadre" style="margin-left: -10px;">
+							<div name="logout" id="info-user" style="font-size: 12px; margin-top: -3px;"><a href="#" style="font-family: 'Julius Sans One', sans-serif; color: #c10b0b;">Déconnexion</a></div>
+						</div>
+
+						<div class="progress" data-toggle="tooltip" data-placement="bottom" title="85/100 - JAUGE DE POINTS MAGIQUES">
+							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+							</div>
+						</div>
+
+
+						<div class="col-md-12 col-xs-3">
+							<img data-toggle="tooltip" data-placement="top" title="Carte du maraudeur" src="http://icons.iconarchive.com/icons/iconka/harry-potter/128/map-icon.png" style="max-width:100%;">
+						</div>
+						<div class="col-md-12 col-xs-3">
+							<img data-toggle="tooltip" data-placement="top" title="Inventaire" src="http://megaicons.net/static/img/icons_sizes/410/1613/128/my-documents-icon.png" style="max-width:100%;">
+						</div>
+					{{else}}
+						<div id="titre-cadre" style="margin-left: -10px;"><center>Connexion</center></div>
+						<div id="cadre" style="margin-left: -10px;">
+							<input type="text" placeholder="Nom du sorcier" class="input-connexion" />
+							<input type="password" placeholder="Mot de passe" class="input-connexion" />
+							<div id="info-user" style="font-size: 12px;">Connexion</div>
+						</div>
+					{{/if}}
+				</div>
+
+					<!-- Contenu -->
+				<div class="col-xs-12 col-md-8 col-md-pull-2">
+					<div class="row">
+						{{> yield}}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
 </template>
