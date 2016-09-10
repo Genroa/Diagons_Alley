@@ -1,0 +1,8 @@
+<template name="home">
+	{{setTitle "Index"}}
+	Index:
+	<br>
+	{{#each forum in forums}}
+		<a href="/index/{{forum.slug}}/">{{forum.forumName}}</a>
+	{{/each}}
+</template>

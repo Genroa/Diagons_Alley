@@ -1,11 +1,18 @@
  
-    * {
-                margin:0;
-                padding:0;
-                }
+
+::-webkit-scrollbar {
+                width: 10px; 
+                height: 5px;
+                background-color: rgba(17,15,15,0.97);}
+ 
+::-webkit-scrollbar-track {
+                background-color: rgba(17,15,15,0.97); }
+ 
+::-webkit-scrollbar-thumb { 
+                background-color: black; }
 
  body { 
-                background-image: url(background.png);
+                background-image: url(../images/background.png);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-attachment: fixed;
@@ -15,8 +22,8 @@
 header #menu {
                 background-color: rgba(17,15,15,0.97);
                 width: 100%;
-                line-height: 50px;
-                height: 50px;
+                line-height: 70px;
+                height: 70px;
                 margin-top: -10px;
                 padding: 10px;
                 z-index:2;
@@ -32,7 +39,8 @@ header #menu #nom_site {
                 margin-top: 35px;
                 font-family: 'Aguafina Script', cursive;
                 text-align:center;
-                text-shadow: -2px 5px 10px black; }
+                text-shadow: -2px 5px 10px black; 
+                margin-top: 19px;}
 
 h1 { 
                 font-family: 'Aguafina Script', cursive;
@@ -47,8 +55,6 @@ footer #footer {
                 line-height: 20px;
                 height: 20px;
                 padding: 10px;
-    margin-top: 20px;
-                z-index:54;
                 position: fixed;
                 bottom:0;
                 width: 100%;
@@ -64,41 +70,26 @@ footer a {
                 
 footer a:hover {
                 letter-spacing: 0.3em; 
-                transition: 2s; }
+                transition: 2s;
+                color: white;}
 
 .cadre {
     
     background-color: rgba(17,15,15,0.92);
-    width: 600px;
-    height: auto;
+    height: 400px;
     padding: 25px; 
-    margin-left: 150px;
-    position: absolute;
-    z-index:50;
-    margin-top: 150px;
     border-radius: 6px;
     color: white;
-    margin-bottom: 40px;
     font-family: 'Julius Sans One', sans-serif;
     text-align: justify;
+    margin-bottom: 10px;
+    box-shadow: 1px 0px 10px black;
 }
 
-.cadre2 {
-    
-    background-color: rgba(17,15,15,0.92);
-    width: 410px;
-    height: auto;
-    padding: 20px; 
-    margin-right: 100px;
-    position: absolute;
-    z-index:51;
-    margin-left:  820px;
-    margin-top: 150px;
-    border-radius: 6px;
-    color: white;
-    margin-bottom: 40px;
-    font-family: 'Julius Sans One', sans-serif;
-    text-align: justify;
+ 
+#vignette {
+     border-radius: 10px; 
+    box-shadow: 1px 0px 10px black; 
+    width: auto;
+    margin-bottom: 10px;
 }
-     
-        
